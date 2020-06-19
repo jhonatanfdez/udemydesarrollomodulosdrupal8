@@ -1,0 +1,15 @@
+<?php
+
+
+function page_test_theme($existing, $type, $theme, $path) {
+  return [
+    'my_template' => [
+      'variables' => [
+        'titulo' => 'Template Twig!!!',
+        'descripcion' => 'Esta es una descripción',
+        'my_variable' => NULL,
+        'form' => NULL,
+      ],
+    ],
+  ];
+}

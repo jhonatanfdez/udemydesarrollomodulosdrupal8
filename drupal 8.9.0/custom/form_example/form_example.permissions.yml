@@ -1,0 +1,24 @@
+form_example acceder a vista Datos personales:
+  title: 'Acceder a vista Datos personales'
+  description: 'Acceder a vista Datos personales'
+  restrict access: true
+
+form_example crear nuevo registro:
+  title: 'crear nuevo registro'
+  description: 'crear nuevo registro'
+  restrict access: true
+
+form_example editar registro:
+  title: 'Editar registro'
+  description: 'Editar registro'
+  restrict access: true
+
+form_example eliminar registro:
+  title: 'Eliminar registro'
+  description: 'Eliminar registro'
+  restrict access: true
+
+form_example ver un registro:
+  title: 'Ver un registro'
+  description: 'Ver un registro'
+  restrict access: true

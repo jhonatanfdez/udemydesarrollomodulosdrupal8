@@ -1,0 +1,94 @@
+<?php
+
+
+function form_example_schema() {
+  $schema['datospersonales'] = array(
+    // Example (partial) specification for table "node".
+    'description' => 'The base table for datos personales.',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The primary identifier for a node.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'nombre' => array(
+        'description' => 'The type of this node.',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'apellido' => array(
+        'description' => 'The node title.',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'email' => array(
+        'description' => 'The node title.',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'celular' => array(
+        'description' => 'The node title.',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'fecha' => array(
+        'description' => 'The node title.',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+    ),
+
+    'primary key' => array('id'),
+  );
+  return $schema;
+}
+
+
+function form_example_install() {
+
+
+
+  $values = [
+    [
+      'nombre' => 'Jhonatan ',
+      'apellido' => 'Fernandez',
+      'email' => 'a@a.com',
+      'celular' => '111111',
+      'fecha' => '',
+    ],
+    [
+      'nombre' => 'Jhonatan 2',
+      'apellido' => 'Fernandez 2',
+      'email' => 'a@a2.com',
+      'celular' => '111111',
+      'fecha' => '',
+    ],
+    [
+      'nombre' => 'Jhonatan 3',
+      'apellido' => 'Fernandez 3',
+      'email' => 'a3@a.com',
+      'celular' => '111111',
+      'fecha' => '',
+    ],
+  ];
+
+  $connection = \Drupal::database();
+
+  $query = $connection->insert('datospersonales')->fields(['nombre', 'apellido', 'email', 'celular', 'fecha']);
+  foreach ($values as $record) {
+    $query->values($record);
+  }
+  $query->execute();
+
+}
